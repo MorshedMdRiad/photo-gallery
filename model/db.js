@@ -18,11 +18,30 @@ const artistSchema = new mongoose.Schema({
     },
     profile_pic:{
         type:String,
+        default: null
     },
     country:{
         type:String,
         required:true
     },
+    typeOfPhotographer:{
+        type:String,
+        required:true
+    },
+    cover_pic:[{
+        createdAt:{
+            type:String,
+            required: true
+        },
+        image:{
+            type:String,
+            required:true
+        },
+        caption:{
+            type:String,
+            required:true
+        }
+    }],
     photo_collection:[{
         createdAt:{
             type:String,
@@ -32,7 +51,7 @@ const artistSchema = new mongoose.Schema({
             type:String,
             required:true
         },
-        name:{
+        caption:{
             type:String,
             required:true
         }

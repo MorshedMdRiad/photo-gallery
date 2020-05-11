@@ -35,6 +35,7 @@ exports.registrationPost = ((req, res) => {
         email,
         phone,
         country,
+        typeOfPhotographer,
         password,
         password2,
     } = req.body;
@@ -62,6 +63,7 @@ exports.registrationPost = ((req, res) => {
                     email,
                     phone,
                     country,
+                    typeOfPhotographer,
                     password,
                     password2
                 });
@@ -72,6 +74,7 @@ exports.registrationPost = ((req, res) => {
                         email,
                         phone,
                         country,
+                        typeOfPhotographer,
                         password
                     });
                     bcrypt.genSalt(10, (err, salt) => {

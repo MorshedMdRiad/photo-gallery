@@ -11,12 +11,11 @@ require('dotenv').config(); // This dotenv package is for using some confidentia
 const app = express(); // declaring the express server as app
 const port = 5000 || process.env.PORT; // declaring the port number for the server
 
-
 //middleware function
 app.use(express.urlencoded({extended:true})); //this middleware function will parse the data from the body part of form
 
 //Mongoose connection (database) // this is the string for mongodb connection
-mongoose.connect(process.env.URILOCAL,{useNewUrlParser:true,useUnifiedTopology:true}).then(()=>{
+mongoose.connect(process.env.URI,{useNewUrlParser:true,useUnifiedTopology:true, useFindAndModify: false}).then(()=>{
     console.log('Database is connected');
 });
 

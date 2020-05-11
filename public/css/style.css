@@ -12,6 +12,9 @@
 
  /* -------my configuration -----*/
 
+ .color p{
+   color: white;
+ }
 
  html,
  body {

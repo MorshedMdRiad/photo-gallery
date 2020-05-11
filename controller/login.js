@@ -27,9 +27,3 @@ exports.logout = (req, res) => {
     res.redirect("/login");
 };
 
-// here the dashboard module will be exported and the user will get access into dashboard
-exports.dashboard = (req, res) => {
-    res.render('dashboard', { user:req.user });
-    console.log(req.user);
-    
-};

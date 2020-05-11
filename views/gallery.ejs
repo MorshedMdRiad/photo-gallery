@@ -1,94 +1,59 @@
 <%- include('./partials/header') %>
 
 <!-- Blog page -->
-<section class="blog-page page-warp">
+<section class="blog-page page-warp" style="background-color: white;">
 	<div class="sp-container">
-		<div class="page-title">
-			<h2>News</h2>
-			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras mattis et augue non mollis. Sed sagittis.
-			</p>
-		</div>
 		<div class="row m-0">
 			<div class="col-md-6 p-0">
 				<div class="gallery-left-col">
-					<!-- Post item -->
-					<div class="blog-post-item">
-						<img src="img/blog/1.jpg" alt="" class="blog-thumb">
-						<div class="post-content">
-							<div class="post-cata">photography</div>
-							<h4 class="post-title">How to take the perfect shot</h4>
-							<div class="post-date">January 23, 2019</div>
-							<p>Pellentesque dictum nisl in nibh dictum volutpat nec a quam. Vivamus suscipit nisl quis
-								nulla pretium, vitae ornare leo sollicitudin. Aenean quis velit pulvinar, pellentesque
-								neque vel, laoreet orci. Suspendisse potenti. </p>
-							<a href="#" class="site-btn sb-big">Read More <img src="img/icons/arrow-right-black.png"
-									alt=""></a>
+					<div class="gallery-text">
+						<div class="page-title ml-5 pl-5">
+							<h2>Gallery</h2>
+							<p>The look's artists' gallery exhibitions. Here the pictures are not only the pictures, these are weapons,
+								these are messages, these are emotions, these are cultures, these are the world.
+							</p>
 						</div>
 					</div>
-					<!-- Post item -->
-					<div class="blog-post-item">
-						<img src="img/blog/2.jpg" alt="" class="blog-thumb">
-						<div class="post-content">
-							<div class="post-cata">photography</div>
-							<h4 class="post-title">How to take the perfect shot</h4>
-							<div class="post-date">January 23, 2019</div>
-							<p>Pellentesque dictum nisl in nibh dictum volutpat nec a quam. Vivamus suscipit nisl quis
-								nulla pretium, vitae ornare leo sollicitudin. Aenean quis velit pulvinar, pellentesque
-								neque vel, laoreet orci. Suspendisse potenti. </p>
-							<a href="#" class="site-btn sb-big">Read More <img src="img/icons/arrow-right-black.png"
-									alt=""></a>
-						</div>
+					<% gallery.forEach(element => { %>
+					<% let photo = element.photo_collection %>
+					<% photo.map(ele=>{ %>
+					<div class="gallery-item">
+						<img src="<%= ele.image %> " alt="#">
+						<h4><%= ele.caption %> </h4>
+						<p><%= element.name %> </p>
+						<p><%= ele.createdAt %> </p>
+						<form action="/ArtistGallery" method="post">
+							<input type="hidden" name="id" value="<%= element.email %>">
+							<button type="submit" class="site-btn" style="padding: 10px;">view gallery <img
+									src="img/icons/arrow-right-black.png" alt=""></button>
+						</form>
 					</div>
-					<!-- Post item -->
-					<div class="blog-post-item">
-						<img src="img/blog/3.jpg" alt="" class="blog-thumb">
-						<div class="post-content">
-							<div class="post-cata">photography</div>
-							<h4 class="post-title">How to take the perfect shot</h4>
-							<div class="post-date">January 23, 2019</div>
-							<p>Pellentesque dictum nisl in nibh dictum volutpat nec a quam. Vivamus suscipit nisl quis
-								nulla pretium, vitae ornare leo sollicitudin. Aenean quis velit pulvinar, pellentesque
-								neque vel, laoreet orci. Suspendisse potenti. </p>
-							<a href="#" class="site-btn sb-big">Read More <img src="img/icons/arrow-right-black.png"
-									alt=""></a>
-						</div>
-					</div>
+					<% }) %>
+					<% }) %>
 				</div>
 			</div>
 			<div class="col-md-6 p-0">
-				<div class="gallery-right-col">
-					<!-- Post item -->
-					<div class="blog-post-item">
-						<img src="img/blog/4.jpg" alt="" class="blog-thumb">
-						<div class="post-content">
-							<div class="post-cata">photography</div>
-							<h4 class="post-title">How to take the perfect shot</h4>
-							<div class="post-date">January 23, 2019</div>
-							<p>Pellentesque dictum nisl in nibh dictum volutpat nec a quam. Vivamus suscipit nisl quis
-								nulla pretium, vitae ornare leo sollicitudin. Aenean quis velit pulvinar, pellentesque
-								neque vel, laoreet orci. Suspendisse potenti. </p>
-							<a href="#" class="site-btn sb-big">Read More <img src="img/icons/arrow-right-black.png"
-									alt=""></a>
-						</div>
+				<div class="gallery-left-col">
+					<% gallery.forEach(element => { %>
+					<% let photo = element.cover_pic %>
+					<% photo.map((ele=>{ %>
+					<div class="gallery-item">
+						<img src="<%= ele.image %> " alt="#">
+						<h4><%= ele.caption %> </h4>
+						<p><%= element.name %> </p>
+						<form action="/ArtistGallery" method="post">
+							<input type="hidden" name="id" value="<%= element.email %>">
+							<button type="submit" class="site-btn" style="padding: 10px;">view gallery <img
+									src="img/icons/arrow-right-black.png" alt=""></button>
+						</form>
 					</div>
-					<!-- Post item -->
-					<div class="blog-post-item">
-						<img src="img/blog/5.jpg" alt="" class="blog-thumb">
-						<div class="post-content">
-							<div class="post-cata">photography</div>
-							<h4 class="post-title">How to take the perfect shot</h4>
-							<div class="post-date">January 23, 2019</div>
-							<p>Pellentesque dictum nisl in nibh dictum volutpat nec a quam. Vivamus suscipit nisl quis
-								nulla pretium, vitae ornare leo sollicitudin. Aenean quis velit pulvinar, pellentesque
-								neque vel, laoreet orci. Suspendisse potenti. </p>
-							<a href="#" class="site-btn sb-big">Read More <img src="img/icons/arrow-right-black.png"
-									alt=""></a>
-						</div>
-					</div>
+					<% })) %>
+					<% }) %>
 				</div>
 			</div>
 		</div>
 	</div>
+
 </section>
 <!-- Blog page end -->
 
