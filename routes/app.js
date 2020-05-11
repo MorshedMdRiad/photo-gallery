@@ -163,7 +163,8 @@ router
 router 
   .route('/editGalleryPhoto')
   .post(dashboard.edit_gallery_photo);
-
+  
+//profile picture uploading route
 router
     .route('/profilePic')
     //uploading profile picture mechanism
