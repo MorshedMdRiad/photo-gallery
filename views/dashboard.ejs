@@ -1,0 +1,52 @@
+<%- include('./partials/header') %>
+<%- include('./partials/flash') %> 
+<!-- side-navbar -->
+<div id="offcanvas-reveal" uk-offcanvas="mode: reveal; overlay: true">
+    <div class="uk-offcanvas-bar">
+        <button class="uk-offcanvas-close" style="border-radius: 50%;height: 50px;width: 50px;" type="button"
+            uk-close></button>
+        <div class="row">
+            <img src="../img//artists//4.jpg" alt="" style="height: 200px;width:200px;border-radius: 50%;">
+        </div>
+        <div class="row">
+            <div class="uk-grid" uk-grid>
+                <p><%= user.name %> </p>
+                <p><%#= user.email %> </p>
+                <p><%#= user.phone %> </p>
+                <p><%#= user.country %> </p>
+                <!-- <p>Bangladesh</p> -->
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- side-navbar-end -->
+
+<!-- fixed animation button -->
+<div class="fixed-action-btn">
+    <a class="btn-floating btn-large red" style="color: white;">
+        <span uk-icon="settings"></span>
+    </a>
+    <ul>
+        <li><a class="btn-floating red" title="Your Profile" uk-tooltip uk-toggle="target: #offcanvas-reveal"><i
+                    class="material-icons">person</i></a></li>
+        <li><a class="btn-floating purple" title="Edit profile" uk-tooltip><i class="material-icons">edit</i></a></li>
+        <li><a class="btn-floating green" title="Delete account" uk-tooltip><i class="material-icons">delete</i></a>
+        </li>
+        <li><a class="btn-floating blue" title="Image upload" uk-tooltip><i class="material-icons">file_upload</i></a>
+        </li>
+    </ul>
+</div>
+<!-- fixed animation button end -->
+
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        var elems = document.querySelectorAll('.fixed-action-btn');
+        var instances = M.FloatingActionButton.init(elems, {
+            direction: 'left',
+            hoverEnabled: false
+        });
+    });
+</script>
+<%- include('./partials/dashboardFooter') %>
