@@ -174,7 +174,7 @@ router
         var ext = req.file.originalname.split('.');
         var mimetype = ext[1];
 
-        if (mimetype == "jpg" || mimetype == "png" || mimetype == 'JPG' || mimetype == 'PNG') {
+        if (mimetype == "jpg" || mimetype == "png" || mimetype == 'JPG' || mimetype == 'PNG' || mimetype == 'jpeg' || mimetype == 'JPEG') {
           let dateTime = new Date();
           let options = {
             weekday: "long",
@@ -242,7 +242,7 @@ router
         var mimetype = ext[1];
         console.log(mimetype);
         
-        if (mimetype == "jpg" || mimetype == "png" || mimetype == 'JPG' || mimetype == 'PNG') {
+        if (mimetype == "jpg" || mimetype == "png" || mimetype == 'JPG' || mimetype == 'PNG' || mimetype == 'jpeg' || mimetype == 'JPEG') {
           let dateTime = new Date();
           let options = {
             weekday: "long",
@@ -303,7 +303,7 @@ router
         var ext = req.file.originalname.split('.');
         var mimetype = ext[1];
         
-        if (mimetype == "jpg" || mimetype == "png" ||  mimetype == 'JPG' || mimetype == 'PNG') {
+        if (mimetype == "jpg" || mimetype == "png" ||  mimetype == 'JPG' || mimetype == 'PNG' || mimetype == 'jpeg' || mimetype == 'JPEG') {
           let dateTime = new Date();
           let options = {
             weekday: "long",
